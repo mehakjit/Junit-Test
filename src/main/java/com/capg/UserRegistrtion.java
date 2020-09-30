@@ -69,6 +69,21 @@ public class UserRegistrtion {
 					System.out.println("Incorrect Mobile No " + "\n" + "Correct Mobile no should be like 91 9494949494 ie country code + space + 10 digit mobile no");
 				}		
 			}
+			
+			for(int i = 0;i<1;) {	
+				System.out.println("Enter password of your choice: ");
+				String firstName = sc.nextLine();
+				Pattern pattern =Pattern.compile("^[0-9a-zA-Z]{8,}");
+				Matcher matcher = pattern.matcher(firstName);
+				boolean matchfound = matcher.find();
+				if(matchfound) {
+					System.out.println("Valid Mobile Id");
+					i=1;
+				}
+				else {
+					System.out.println("Incorrect Password ");
+				}		
+			}
 			sc.close();
 		}
 	}

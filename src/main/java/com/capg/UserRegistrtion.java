@@ -81,7 +81,7 @@ public class UserRegistrtion {
 					i=1;
 				}
 				else {
-					System.out.println("Invalid Password "); 
+					System.out.println("Invalid Password " + "/n" + "Valid password is min 8 char and has at least one uper case and exactly one special character"); 
 			}
 			sc.close();
 		}

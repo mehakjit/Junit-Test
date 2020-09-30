@@ -55,6 +55,20 @@ public class UserRegistrtion {
 										+ " +,-,.,_ can only be added after 3 lower case chracter");
 				}		
 			}
-		sc.close();
+			for(int i = 0;i<1;) {	
+				System.out.println("Enter Mobile No ");
+				String firstName = sc.nextLine();
+				Pattern pattern =Pattern.compile("^[0-9]{2}\\s[1-9]{1}[0-9]{9}$");
+				Matcher matcher = pattern.matcher(firstName);
+				boolean matchfound = matcher.find();
+				if(matchfound) {
+					System.out.println("Valid Mobile Id");
+					i=1;
+				}
+				else {
+					System.out.println("Incorrect Mobile No " + "\n" + "Correct Mobile no should be like 91 9494949494 ie country code + space + 10 digit mobile no");
+				}		
+			}
+			sc.close();
+		}
 	}
-}

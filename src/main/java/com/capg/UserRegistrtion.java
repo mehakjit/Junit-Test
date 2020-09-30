@@ -73,7 +73,7 @@ public class UserRegistrtion {
 			for(int i = 0;i<1;) {	
 				System.out.println("Enter password of your choice: ");
 				String firstName = sc.nextLine();
-				Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*\\\\d)([a-zA-Z0-9]){8,}");
+				Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%]).{8,}");
 				Matcher matcher = pattern.matcher(firstName);
 				boolean matchfound = matcher.find();
 				if(matchfound) {
@@ -81,8 +81,7 @@ public class UserRegistrtion {
 					i=1;
 				}
 				else {
-					System.out.println("InvalidnPssword " + "\n" +
-					"Correct password be is like min 8 chracters and at least one Upper case"); 
+					System.out.println("Invalid Password "); 
 			}
 			sc.close();
 		}

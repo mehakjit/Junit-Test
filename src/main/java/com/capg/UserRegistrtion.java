@@ -73,17 +73,18 @@ public class UserRegistrtion {
 			for(int i = 0;i<1;) {	
 				System.out.println("Enter password of your choice: ");
 				String firstName = sc.nextLine();
-				Pattern pattern =Pattern.compile("^[0-9a-zA-Z]{8,}");
+				Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*\\\\d)([a-zA-Z0-9]){8,}");
 				Matcher matcher = pattern.matcher(firstName);
 				boolean matchfound = matcher.find();
 				if(matchfound) {
-					System.out.println("Valid Mobile Id");
+					System.out.println("Valid password");
 					i=1;
 				}
 				else {
-					System.out.println("Incorrect Password ");
-				}		
+					System.out.println("InvalidnPssword " + "\n" +
+					"Correct password be is like min 8 chracters and at least one Upper case"); 
 			}
 			sc.close();
 		}
+	}
 	}

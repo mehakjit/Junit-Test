@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistrtion {
 	
-	public static String firstName(String firstName) {
+	public static String firstName(String firstName) throws CoustomException{
 		//for(int i = 0;i<1;) {
 			Pattern pattern =Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
 			Matcher matcher = pattern.matcher(firstName);
@@ -16,12 +16,12 @@ public class UserRegistrtion {
 	//			i=1;
 				}
 			else {
-				return "Invalid";
+				throw new CoustomException ("Invalid firstname");
 		//	}		
 		}
 	}
 		
-	public static String lastName(String lastName) {
+	public static String lastName(String lastName) throws CoustomException{
 	//	for(int i = 0;i<1;) {
 			Pattern pattern =Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
 			Matcher matcher = pattern.matcher(lastName);
@@ -31,12 +31,12 @@ public class UserRegistrtion {
 	//			i=1;
 				}
 			else {
-				return "Invalid";
+				throw new CoustomException ("Invalid lastname");
 		//	}		
 		}
 	}
 		
-	public static String emailID(String emailID) {
+	public static String emailID(String emailID) throws CoustomException{
 	//	for(int i = 0;i<1;) {
 			Pattern pattern =Pattern.compile("^[a-z]{3,}([-+-.]{1}[a-zA-Z0-9]{3})?@[a-z]{2,}\\.[a-z]{2,4}(\\.[a-z]{2})?$");
 			Matcher matcher = pattern.matcher(emailID);
@@ -46,12 +46,12 @@ public class UserRegistrtion {
 	//			i=1;
 				}
 			else {
-				return "Invalid";
+				throw new CoustomException ("Invalid emailID");
 		//	}		
 		}
 	}
 	
-	public static String mobileNo(String mobileNo) {
+	public static String mobileNo(String mobileNo) throws CoustomException{
 	//	for(int i = 0;i<1;) {
 			Pattern pattern =Pattern.compile("^[0-9]{2}\\s[1-9]{1}[0-9]{9}$");
 			Matcher matcher = pattern.matcher(mobileNo);
@@ -61,12 +61,12 @@ public class UserRegistrtion {
 	//			i=1;
 				}
 			else {
-				return "Invalid";
+				throw new CoustomException ("Invalid mobile no.");
 		//	}		
 		}
 	}
 	
-	public static String password(String password) {
+	public static String password(String password) throws CoustomException{
 	//	for(int i = 0;i<1;) {
 			Pattern pattern =Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%]).{8,}");
 			Matcher matcher = pattern.matcher(password);
@@ -76,7 +76,7 @@ public class UserRegistrtion {
 	//			i=1;
 				}
 			else {
-				return "Invalid";
+				throw new CoustomException ("Invalid password");
 		//	}		
 		}
 	}
@@ -85,15 +85,15 @@ public class UserRegistrtion {
 		System.out.println("Welcome to User Registration Wizard");
 		Scanner sc =  new Scanner(System.in);
 				System.out.println("Enter First name ");
-				firstName(sc.nextLine());
+	//			firstName(sc.nextLine());
 				System.out.println("Enter Last name ");
-				lastName(sc.nextLine());
+	//			lastName(sc.nextLine());
 				System.out.println("Enter E-mail Id ");
-				emailID(sc.nextLine());
+	//			emailID(sc.nextLine());
 				System.out.println("Enter Mobile No ");
-				mobileNo(sc.nextLine());
+	//			mobileNo(sc.nextLine());
 				System.out.println("Enter password ");
-				password(sc.nextLine());
+	//			password(sc.nextLine());
 			sc.close();
 		}
 	}
